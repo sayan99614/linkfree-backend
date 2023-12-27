@@ -14,4 +14,6 @@ router
   .patch(protect, itemController.updateItem)
   .delete(protect, itemController.deleteItem);
 
+router.route("/moveitem/:id").patch(protect, itemController.moveItem);
+
 module.exports = router;

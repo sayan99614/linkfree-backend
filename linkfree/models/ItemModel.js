@@ -42,6 +42,12 @@ const itemSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  position: {
+    type: Number,
+    required: true,
+  },
 });
 
-module.exports = mongoose.model("Item", itemSchema);
+const model = mongoose.model("Item", itemSchema);
+
+module.exports = model;

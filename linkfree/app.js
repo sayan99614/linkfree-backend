@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 
 const AppError = require("./utils/appError");
 const globalErrorHandler = require("./controllers/errorController");
@@ -11,6 +12,7 @@ const app = express();
 
 // Limit requests from same API
 
+app.use(cors());
 // Body parser, reading data from body into req.body
 app.use(express.json({ limit: "10kb" }));
 
